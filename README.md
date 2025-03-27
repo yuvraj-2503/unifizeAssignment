@@ -83,7 +83,7 @@ go run main.go
 ## API Endpoints
 
 ### Calculate Discount
-- `POST /calculate/discount` - Calculate the final price after applying discounts.
+- `POST /api/v1/unifize/calculate/discount` - Calculate the final price after applying discounts.
 
 ### Sample JSON Request
 
@@ -143,7 +143,7 @@ go run main.go
 ```
 
 ### Validate Coupon
-- `POST /validate/coupon/:couponCode` - Validate if a discount coupon can be applied.
+- `POST /api/v1/unifize/validate/coupon/:couponCode` - Validate if a discount coupon can be applied.
 
 ### Sample JSON Request
 
