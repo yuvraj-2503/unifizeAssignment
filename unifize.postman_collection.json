@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "01339dbd-6314-4cea-a04f-40caed619ad7",
+		"name": "unifize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15234251"
+	},
+	"item": [
+		{
+			"name": "calculate discount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cartItems\": [\n    {\n      \"product\": {\n        \"id\": \"P123\",\n        \"brand\": \"PUMA\",\n        \"brand_tier\": \"premium\",\n        \"category\": \"T-shirt\",\n        \"base_price\": \"1000.00\",\n        \"current_price\": \"600.00\"\n      },\n      \"quantity\": 2,\n      \"size\": \"M\"\n    },\n    {\n      \"product\": {\n        \"id\": \"P456\",\n        \"brand\": \"Nike\",\n        \"brand_tier\": \"regular\",\n        \"category\": \"Shoes\",\n        \"base_price\": \"5000.00\",\n        \"current_price\": \"4000.00\"\n      },\n      \"quantity\": 1,\n      \"size\": \"10\"\n    }\n  ],\n  \"customerProfile\": {\n    \"id\": \"C789\",\n    \"tier\": \"PREMIUM\"\n  },\n  \"paymentInfo\": {\n    \"method\": \"CARD\",\n    \"bank_name\": \"ICICI\",\n    \"card_type\": \"CREDIT\",\n    \"voucher_code\": \"SUPER69\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/unifize/calculate/discount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"unifize",
+						"calculate",
+						"discount"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "calculate discount",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cartItems\": [\n    {\n      \"product\": {\n        \"id\": \"P123\",\n        \"brand\": \"PUMA\",\n        \"brand_tier\": \"premium\",\n        \"category\": \"T-shirt\",\n        \"base_price\": \"1000.00\",\n        \"current_price\": \"600.00\"\n      },\n      \"quantity\": 2,\n      \"size\": \"M\"\n    },\n    {\n      \"product\": {\n        \"id\": \"P456\",\n        \"brand\": \"Nike\",\n        \"brand_tier\": \"regular\",\n        \"category\": \"Shoes\",\n        \"base_price\": \"5000.00\",\n        \"current_price\": \"4000.00\"\n      },\n      \"quantity\": 1,\n      \"size\": \"10\"\n    }\n  ],\n  \"customerProfile\": {\n    \"id\": \"C789\",\n    \"tier\": \"PREMIUM\"\n  },\n  \"paymentInfo\": {\n    \"method\": \"CARD\",\n    \"bank_name\": \"ICICI\",\n    \"card_type\": \"CREDIT\",\n    \"voucher_code\": \"SUPER69\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unifize/calculate/discount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unifize",
+								"calculate",
+								"discount"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:42:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"original_price\": \"5200\",\n    \"final_price\": \"4460\",\n    \"applied_discounts\": {\n        \"Bank Offer: ICICI\": \"260\",\n        \"Brand Offer: PUMA\": \"480\"\n    },\n    \"message\": \"Discounts applied successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "validate coupon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cartItems\": [\n    {\n      \"product\": {\n        \"id\": \"P123\",\n        \"brand\": \"PUMA\",\n        \"brand_tier\": \"premium\",\n        \"category\": \"T-shirt\",\n        \"base_price\": \"1000.00\",\n        \"current_price\": \"600.00\"\n      },\n      \"quantity\": 2,\n      \"size\": \"M\"\n    },\n    {\n      \"product\": {\n        \"id\": \"P456\",\n        \"brand\": \"Nike\",\n        \"brand_tier\": \"regular\",\n        \"category\": \"Shoes\",\n        \"base_price\": \"5000.00\",\n        \"current_price\": \"4000.00\"\n      },\n      \"quantity\": 1,\n      \"size\": \"10\"\n    }\n  ],\n  \"customerProfile\": {\n    \"id\": \"C789\",\n    \"tier\": \"PREMIUM\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/unifize/validate/coupon/:couponCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"unifize",
+						"validate",
+						"coupon",
+						":couponCode"
+					],
+					"variable": [
+						{
+							"key": "couponCode",
+							"value": "SUPER12"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "validate coupon",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cartItems\": [\n    {\n      \"product\": {\n        \"id\": \"P123\",\n        \"brand\": \"PUMA\",\n        \"brand_tier\": \"premium\",\n        \"category\": \"T-shirt\",\n        \"base_price\": \"1000.00\",\n        \"current_price\": \"600.00\"\n      },\n      \"quantity\": 2,\n      \"size\": \"M\"\n    },\n    {\n      \"product\": {\n        \"id\": \"P456\",\n        \"brand\": \"Nike\",\n        \"brand_tier\": \"regular\",\n        \"category\": \"Shoes\",\n        \"base_price\": \"5000.00\",\n        \"current_price\": \"4000.00\"\n      },\n      \"quantity\": 1,\n      \"size\": \"10\"\n    }\n  ],\n  \"customerProfile\": {\n    \"id\": \"C789\",\n    \"tier\": \"PREMIUM\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/unifize/validate/coupon/:couponCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"unifize",
+								"validate",
+								"coupon",
+								":couponCode"
+							],
+							"variable": [
+								{
+									"key": "couponCode",
+									"value": "SUPER12"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:50:01 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": true\n}"
+				}
+			]
+		}
+	]
+}
